@@ -47,20 +47,20 @@ const Node = ({ data: nodeData }) => {
             flexDirection: 'column',
             alignItems: 'center',
           }}>
-          <ProgressIcon
+          {/* <ProgressIcon
             values={nodeData.data.analytics}
             total={nodeData.data.potentialTarget}
             icon={stepIcon}
-          />
+          /> */}
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: "space-between", width: '100%'}}>
-            <div style={{ fontSize: '10px', paddingLeft: 5}} title="Target">
+            {/* <div style={{ fontSize: '10px', paddingLeft: 5}} title="Target">
               <i className="fas fa-bullseye" style={{ color: '#2E86C1', paddingRight: 3}}></i>
               { nodeData.data.target }
-            </div>
-            <div style={{ fontSize: '10px', paddingRight: 5}} title={ nodeData.data.percentOK?.label }>
+            </div> */}
+            {/* <div style={{ fontSize: '10px', paddingRight: 5}} title={ nodeData.data.percentOK?.label }>
               <i className="fas fa-check-circle" style={{ color: '#2E86C1', paddingRight: 3}}></i>
               { nodeData.data.percentOK?.value } %
-            </div>
+            </div> */}
           </div>
         </div>
         { nodeData.final !== true && (

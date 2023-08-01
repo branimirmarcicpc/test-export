@@ -40,8 +40,8 @@ const Flow = ({ mode, steps }) => {
                 stroke: 'rgb(152,152,152)'
               },
               type: 'smoothstep',
-              label: `${label ? label + ': ' : ''}${count}`,
-              labelShowBg: true,
+              // label: `${label ? label + ': ' : ''}${count}`,
+              labelShowBg: false,
               labelBgPadding: [10, 5],
               labelBgBorderRadius: 4,
               labelStyle: {

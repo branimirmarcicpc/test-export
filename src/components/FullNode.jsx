@@ -57,23 +57,24 @@ const FullNode = ({ data: nodeData }) => {
             flexDirection: 'row',
             alignItems: 'center',
           }}>
-          <Box flexGrow={1}>
+          {/* <Box flexGrow={1}>
             <ProgressIcon
               values={nodeData.data.analytics}
               total={nodeData.data.potentialTarget}
               icon={stepIcon}
             />
-          </Box>
+          </Box> */}
           <div style={{ marginLeft: 10, marginRight: 10, flexGrow: 3 }}>
             <Typography style={{ fontSize: '12px', color: "#666666" }}>
               {nodeData.name}
             </Typography>
             { !!nodeData.contentName && (
               <Typography style={{ fontSize: '12px' }} title={nodeData.contentName}>
-                { nodeData.contentName.length > 45 ?  nodeData.contentName.substring(0,45) + '...' : nodeData.contentName }
+                {/* { nodeData.contentName.length > 45 ?  nodeData.contentName + '...' : nodeData.contentName } */}
+                { nodeData.contentName}
               </Typography>
             )}
-            <Box mt={1} mb={1}>
+            {/* <Box mt={1} mb={1}>
               <Typography style={{ fontSize: '12px', color: "#666666" }}>
                 Date
               </Typography>
@@ -91,8 +92,8 @@ const FullNode = ({ data: nodeData }) => {
                   </Typography>
                 </Box>
               )}
-            </Box>
-            <Grid container>
+            </Box> */}
+            {/* <Grid container>
               <Grid item xs={4} style={{ textAlign: "left"}}>
                 <Typography style={{ fontSize: '12px', color: "#666666" }}>
                   Potential
@@ -117,7 +118,7 @@ const FullNode = ({ data: nodeData }) => {
                   { nodeData.data.percentOK.value } %
                 </Typography>
               </Grid>
-            </Grid>
+            </Grid> */}
           </div>
         </div>
         <Box style={{ width: '98%', padding: 3}}>
@@ -133,11 +134,11 @@ const FullNode = ({ data: nodeData }) => {
                       }}/>
                     </TableCell>
                     <TableCell style={{ fontSize: '10px'}}>{label}</TableCell>
-                    <TableCell style={{ fontSize: '10px', textAlign: 'right'}}>{value}</TableCell>
-                    <TableCell style={{ fontSize: '10px', textAlign: 'right'}}>{formatDecimal(value / nodeData.data.potentialTarget * 100)} %</TableCell>
+                    <TableCell style={{ fontSize: '10px', textAlign: 'right', whiteSpace: 'normal', wordBreak: 'break-all'}}>{value}</TableCell>
+                    {/* <TableCell style={{ fontSize: '10px', textAlign: 'right'}}>{formatDecimal(value / nodeData.data.potentialTarget * 100)} %</TableCell> */}
                   </TableRow>
                 ))}
-                <TableRow>
+                {/* <TableRow>
                   <TableCell style={{ padding: 0}}>
                     <div style={{
                       border: `5px solid #cccccc`,
@@ -147,7 +148,7 @@ const FullNode = ({ data: nodeData }) => {
                   <TableCell style={{ fontSize: '10px'}}>Not Reached</TableCell>
                   <TableCell style={{ fontSize: '10px', textAlign: 'right'}}>{ notReachedValue }</TableCell>
                   <TableCell style={{ fontSize: '10px', textAlign: 'right'}}>{formatDecimal(notReachedValue / nodeData.data.potentialTarget * 100)} %</TableCell>
-                </TableRow>
+                </TableRow> */}
               </TableBody>
             </Table>
           </TableContainer>

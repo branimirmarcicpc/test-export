@@ -39,7 +39,6 @@ const Popover = ({ anchor, onClose, nodeData }) => {
   const classes = useStyles();
   if (!nodeData) return (<div></div>);
   const { data } = nodeData;
-  const notReachedValue = data.data.potentialTarget - data.data.target;
   
   const formatDecimal = (value) => +parseFloat(value).toFixed(2);
   
@@ -86,34 +85,6 @@ const Popover = ({ anchor, onClose, nodeData }) => {
             </Typography>
           </Box>
         )}
-        <Box mb={1}>
-          <Grid container>
-            <Grid item xs={4}>
-              <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '11px' }}>
-                Potential target
-              </Typography>
-              <Typography variant="body1">
-                { data.data.potentialTarget }
-              </Typography>
-            </Grid>
-            <Grid item xs={4} style={{ textAlign: "center"}}>
-              <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '11px' }}>
-                Target
-              </Typography>
-              <Typography variant="body1">
-                { data.data.target }
-              </Typography>
-            </Grid>
-            <Grid item xs={4} style={{ textAlign: "right"}}>
-              <Typography variant="body1" style={{ fontWeight: 'bold', fontSize: '11px' }}>
-                { data.data.percentOK.label }
-              </Typography>
-              <Typography variant="body1">
-                { data.data.percentOK.value } %
-              </Typography>
-            </Grid>
-          </Grid>
-        </Box>
         <Box mt={2}>
           <Typography variant="body1">
             Details
@@ -130,9 +101,6 @@ const Popover = ({ anchor, onClose, nodeData }) => {
                       borderRadius: 5
                     }}/>
                   </TableCell>
-                  <TableCell>{label}</TableCell>
-                  <TableCell style={{ textAlign: 'right'}}>{value}</TableCell>
-                  <TableCell style={{ textAlign: 'right'}}>{formatDecimal(value / data.data.potentialTarget * 100)} %</TableCell>
                 </TableRow>
               ))}
               <TableRow>
@@ -142,9 +110,6 @@ const Popover = ({ anchor, onClose, nodeData }) => {
                     borderRadius: 5
                   }}/>
                 </TableCell>
-                <TableCell>Not Reached</TableCell>
-                <TableCell style={{ textAlign: 'right'}}>{ notReachedValue }</TableCell>
-                <TableCell style={{ textAlign: 'right'}}>{formatDecimal(notReachedValue / data.data.potentialTarget * 100)} %</TableCell>
               </TableRow>
             </TableBody>
           </Table>

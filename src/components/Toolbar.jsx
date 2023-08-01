@@ -8,7 +8,7 @@ const Toolbar = ({ currentMode, changeMode }) => {
         </div>
       )}
       { currentMode === 'fullscreen' && (
-        <div className="button" onClick={() => changeMode('profile')}>
+        <div className="button" onClick={() => changeMode('fullscreen')}>
           Close
         </div>
       )}

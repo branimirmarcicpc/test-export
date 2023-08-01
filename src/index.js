@@ -10,7 +10,7 @@ import "./styles.css";
 import steps from './campaign';
 
 const App = () => {
-  const [mode, setMode] = useState('profile');
+  const [mode, setMode] = useState('fullscreen');
 
   return (
     <ReactFlowProvider>
